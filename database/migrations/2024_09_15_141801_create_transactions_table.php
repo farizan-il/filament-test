@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('Transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('User')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('Users')->cascadeOnDelete();
             $table->foreignId('payment_id')->constrained('Payments')->cascadeOnDelete();
             $table->string('namaPelanggan');
             $table->string('emailPelanggan');
-            $table->foreignId('kursus_id')->constrained('Kursus')->cascadeOnDelete();
+            $table->foreignId('kursus_id')->constrained('Kursuses')->cascadeOnDelete();
             $table->string('namaKursus');
             $table->string('kategoriKursus');
             $table->string('harga');
